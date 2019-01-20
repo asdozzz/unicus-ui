@@ -1,11 +1,33 @@
-$body-font-size = 14px;
+$body-font-size = 13px;
+$title-small-font-size = 14px;
+$title-font-size = 17px;
+$big-header-font-size = 28px;
 
-@font-face
-  font-family "Open Sans"
-  font-style normal
-  src url(../fonts/opensans/opensans.ttf)
+$fonts := {
+  open-sans :"Open Sans",
+  museo-900 :"Museo Sans Cyrl 900",
+  museo-500 :"Museo Sans Cyrl 500",
+  museo-300 :"Museo Sans Cyrl 300",
+  museo-100 :"Museo Sans Cyrl 100"
+}
 
-$font-open-sans = "Open Sans"
-$font-museo-900 = "Museo Sans Cyrl 900"
-$font-museo-500 = "Museo Sans Cyrl 500"
-$font-museo-100 = "Museo Sans Cyrl 100"
+$colors := {
+  error: #ff5252,
+  input-border: rgba(176, 189, 190, 0.54)
+}
+
+$radius := {
+  btn: 5px,
+  card: 8px
+}
+
+vendor(prop, args)
+  -webkit-{prop} args
+  -moz-{prop} args
+  {prop} args
+
+border-radius()
+  vendor('border-radius', arguments)
+
+
+

@@ -1,11 +1,8 @@
-.unicus-container
-  width: 900px!important;
-
 .unicus-head
   height: 77px;
 
 .unicus-btn-border-radius
-  border-radius: 5px
+  border-radius($radius.btn)
 
 .logo
   display: inline-block;
@@ -17,18 +14,83 @@
 
 .logo-text
   color: #ffffff;
-  font-size: 17px;
+  font-size:$title-font-size
+  font-family: $fonts.museo-300;
   text-transform: uppercase;
-
-.unicus-field-params
-  width: 120px;
-  .v-text-field
-    padding-top: 0px!important;
-    margin-top: 0px!important;
 
 .unicus-field-dashed .v-text-field > .v-input__control > .v-input__slot:before
   border-style: dashed;
+  border-color: #7795f8
 
 .unicus-field-dotted .v-text-field > .v-input__control > .v-input__slot:before
   border-style: dotted;
+
+.unicus-card
+  border-radius($radius.card)
+
+.unicus-card-header
+  color: rgba(0, 0, 0, 0.9)
+  font-size: $big-header-font-size
+  font-family: $fonts.museo-500
+
+
+.unicus-field .v-text-field
+  font-size: $body-font-size
+
+.unicus-field .v-text-field--outline .v-input__control > .v-input__slot
+  border: 1px solid $colors.input-border!important;
+
+.unicus-field.has-error .v-text-field--outline .v-input__control > .v-input__slot
+  border: 1px solid $colors.error!important;
+
+.unicus-field.has-error .v-input__control  .v-label
+  color:$colors.error ;
+
+
+.unicus-hr-header
+  height: 3px;
+  border-radius: 23px;
+  background-image: linear-gradient(45deg, #c9d2ff 0%, #fac7ff 100%);
+
+.unicus-hr-shadow
+  border: 0;
+  height: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+
+.museo-900
+  font-family: $fonts.museo-900;
+
+.museo-500
+  font-family: $fonts.museo-500;
+
+.museo-300
+  font-family: $fonts.museo-300;
+
+.museo-100
+  font-family: $fonts.museo-100;
+
+.body-font-size
+  font-size: $body-font-size
+
+.title-small-font-size
+  font-size: $title-small-font-size
+
+.title-font-size
+  font-size: $title-font-size
+
+.big-header-font-size
+  font-size: $big-header-font-size
+
+.unicus-big-header
+  font-family: $fonts.museo-500;
+  font-size: $big-header-font-size;
+
+.unicus-title-black
+  font-family: $fonts.museo-900;
+  font-size: $title-font-size;
+
+.unicus-title
+  font-family: $fonts.museo-500;
+  font-size: $title-font-size;
 
