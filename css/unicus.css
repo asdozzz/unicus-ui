@@ -1,0 +1,68 @@
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Open Sans Light'), local('OpenSans-Light'), url(https://fonts.gstatic.com/s/opensans/v13/DXI1ORHCpsQm3Vp6mXoaTXhCUOGz7vYGh680lGh-uXM.woff) format('woff');
+}
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Open Sans'), local('OpenSans'), url(https://fonts.gstatic.com/s/opensans/v13/cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
+}
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    src: local('Open Sans Semibold'), local('OpenSans-Semibold'), url(https://fonts.gstatic.com/s/opensans/v13/MTP_ySUJH_bn48VBG8sNSnhCUOGz7vYGh680lGh-uXM.woff) format('woff');
+}
+
+.unicus-container {
+    width: 900px!important;
+}
+
+.unicus-head
+{
+    height: 77px;
+}
+
+.logo
+{
+    display: inline-block;
+    width: 44px;
+    height: 44px;
+    padding-top: 9px;
+    padding-left: 9px;
+    /* Style for "Oval" */
+    background-image: url("./img/logo.png");
+}
+
+.logo-text
+{
+    color: #ffffff;
+    font-size: 17px;
+    text-transform: uppercase;
+}
+
+
+.unicus-field-params
+{
+    width: 120px;
+}
+
+.unicus-field-dashed .v-text-field > .v-input__control > .v-input__slot:before
+{
+    border-style: dashed;
+}
+
+.unicus-field-dotted .v-text-field > .v-input__control > .v-input__slot:before
+{
+    border-style: dotted;
+}
+
+.unicus-field-params .v-text-field
+{
+    padding-top: 0px!important;
+    margin-top: 0px!important;
+    font-size: 13px;
+}
