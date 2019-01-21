@@ -14,7 +14,7 @@
 
 .logo-text
   color: #ffffff;
-  font-size:$title-font-size
+  font-size:$font-sizes.title
   font-family: $fonts.museo-300;
   text-transform: uppercase;
 
@@ -30,12 +30,12 @@
 
 .unicus-card-header
   color: rgba(0, 0, 0, 0.9)
-  font-size: $big-header-font-size
+  font-size: $font-sizes.bigheader
   font-family: $fonts.museo-500
 
 
 .unicus-field .v-text-field
-  font-size: $body-font-size
+  font-size: $font-sizes.body
 
 .unicus-field .v-text-field--outline .v-input__control > .v-input__slot
   border: 1px solid $colors.input-border!important;
@@ -61,6 +61,9 @@
 .museo-900
   font-family: $fonts.museo-900;
 
+.museo-700
+  font-family: $fonts.museo-700;
+
 .museo-500
   font-family: $fonts.museo-500;
 
@@ -71,26 +74,35 @@
   font-family: $fonts.museo-100;
 
 .body-font-size
-  font-size: $body-font-size
+  font-size: $font-sizes.body
 
 .title-small-font-size
-  font-size: $title-small-font-size
+  font-size: $font-sizes.title-small
 
 .title-font-size
-  font-size: $title-font-size
+  font-size: $font-sizes.title
 
 .big-header-font-size
-  font-size: $big-header-font-size
+  font-size: $font-sizes.bigheader
 
 .unicus-big-header
   font-family: $fonts.museo-500;
-  font-size: $big-header-font-size;
+  font-size: $font-sizes.bigheader;
 
 .unicus-title-black
   font-family: $fonts.museo-900;
-  font-size: $title-font-size;
+  font-size: $font-sizes.title;
 
 .unicus-title
   font-family: $fonts.museo-500;
-  font-size: $title-font-size;
+  font-size: $font-sizes.title;
+
+.unicus-btn
+  font-family: $fonts.museo-700;
+  font-size: $font-sizes.btn;
+  line-height: $font-sizes.btn;
+  height: 63px;
+  border-radius($radius.btn)
+  text-transform: none
+  border-width: 2px!important
 
