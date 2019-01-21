@@ -18,12 +18,7 @@
   font-family: $fonts.museo-300;
   text-transform: uppercase;
 
-.unicus-field-dashed .v-text-field > .v-input__control > .v-input__slot:before
-  border-style: dashed;
-  border-color: #7795f8
 
-.unicus-field-dotted .v-text-field > .v-input__control > .v-input__slot:before
-  border-style: dotted;
 
 .unicus-card
   border-radius($radius.card)
@@ -34,11 +29,18 @@
   font-family: $fonts.museo-500
 
 
-.unicus-field .v-text-field
+.unicus-field .v-text-field,
+.unicus-field.v-text-field
   font-size: $font-sizes.body
 
-.unicus-field .v-text-field--outline .v-input__control > .v-input__slot
+.unicus-field .v-text-field--outline .v-input__control > .v-input__slot,
+.unicus-field.v-text-field--outline .v-input__control > .v-input__slot
   border: 1px solid $colors.input-border!important;
+
+.unicus-field.v-text-field > .v-input__control > .v-input__slot:before,
+.unicus-field-dashed .v-text-field > .v-input__control > .v-input__slot:before
+  border-style: dashed;
+  border-color: #7795f8
 
 .unicus-field.has-error .v-text-field--outline .v-input__control > .v-input__slot
   border: 1px solid $colors.error!important;
