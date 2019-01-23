@@ -31,9 +31,9 @@
             },
         },
         methods     : {
-            input(event)
+            input(value)
             {
-                this.$emit('input', event.target.value);
+                this.$emit('input', value);
             },
         },
         mounted()

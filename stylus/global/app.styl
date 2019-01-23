@@ -42,6 +42,13 @@
   border-style: dashed;
   border-color: #7795f8
 
+.unicus-field.has-error
+  color:$colors.error!important;
+  caret-color:$colors.error!important;
+
+.unicus-field.has-error.v-text-field .v-input__control > .v-input__slot:before
+  border-color:$colors.error!important;
+
 .unicus-field.has-error .v-text-field--outline .v-input__control > .v-input__slot
   border: 1px solid $colors.error!important;
 

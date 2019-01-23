@@ -28,8 +28,8 @@
             },
         },
         methods: {
-            input(event) {
-                this.$emit('input', event.target.value);
+            input(value) {
+                this.$emit('input', value);
             },
         },
         mounted() {

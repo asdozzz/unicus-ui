@@ -1,8 +1,8 @@
 <template>
     <unicus-text-field
             v-bind="$attrs"
-            single-line
-            v-model.number="numericmodel"
+            v-model="numericmodel"
+            v-on:keypress="keypressMethod()"
             v-on:input="changeNumeric"
             hide-details
             label=" "
@@ -77,9 +77,19 @@
             },
             changeNumeric: function() {
                 let val = this.formatValue(this.numericmodel);
-                this.numericmodel = this.formatNumeric(val);
+                let newVal = this.formatNumeric(val);
+                this.numericmodel = newVal;
                 this.$emit('input', val);
             },
+            keypressMethod: function (evt){
+                evt = (evt) ? evt : window.event;
+                var charCode = (evt.which) ? evt.which : evt.keyCode;
+                if ((charCode > 31 && (charCode < 48 || charCode > 57)) && charCode !== 46) {
+                    evt.preventDefault();
+                } else {
+                    return true;
+                }
+            }
         },
     };
 </script>
