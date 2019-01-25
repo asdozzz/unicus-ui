@@ -1,5 +1,6 @@
 <template>
     <v-select
+            dense
             :value="value"
             @input="input"
             :class="classA"

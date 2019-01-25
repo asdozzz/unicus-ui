@@ -1,7 +1,8 @@
 @import '~vuetify/src/stylus/settings/_variables';
+@import '_variables.styl';
 
-$body-font-family = 'Open Sans';
-$font-size-root = 14px;
-$headings.subheading.size = 17px;
+$body-font-family = $fonts.open-sans;
+$font-size-root = $font-sizes.body;
+$headings.subheading.size = $font-sizes.title;
 
 @import '~vuetify/src/stylus/main.styl';

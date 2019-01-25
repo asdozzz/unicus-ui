@@ -16,6 +16,11 @@ import UnicusBtn from './btns/unicus-btn';
 
 Vue.component('unicus-btn',UnicusBtn);
 
+//layout
+import UnicusLogo from './layout/unicus-logo';
+
+Vue.component('unicus-logo',UnicusLogo);
+
 //unknown
 import UnicusCard from './unknown/unicus-card';
 
