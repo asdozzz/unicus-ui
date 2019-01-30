@@ -79,7 +79,7 @@
                 let val = this.formatValue(this.numericmodel);
                 let newVal = this.formatNumeric(val);
                 this.numericmodel = newVal;
-                this.$emit('input', val);
+                this.$emit('input', parseFloat(val));
             },
             keypressMethod: function (evt){
                 evt = (evt) ? evt : window.event;

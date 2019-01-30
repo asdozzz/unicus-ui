@@ -1,10 +1,13 @@
 <template>
     <span>
-        <span class="logo">
-            <span class="logo-text">
-                UW
+        <router-link to="/">
+             <span class="logo">
+                <span class="logo-text">
+                    UW
+                </span>
             </span>
-        </span>
+        </router-link>
+
         <span class="pl-3">
             <span class="unicus-title-black">Unicus</span>
             <span class="unicus-title">Web</span>
@@ -31,9 +34,6 @@
 
                 return process.env.VUE_APP_MODE_SUFFIX?'('+process.env.VUE_APP_MODE_SUFFIX+')':'';
             }
-        },
-        created: function() {
-            console.log(process.env);
         }
     }
 </script>
