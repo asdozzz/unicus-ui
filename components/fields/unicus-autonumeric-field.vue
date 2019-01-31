@@ -79,7 +79,8 @@
                 let val = this.formatValue(this.numericmodel);
                 let newVal = this.formatNumeric(val);
                 this.numericmodel = newVal;
-                this.$emit('input', parseFloat(val));
+                let ii  = !isNaN(parseFloat(val))?parseFloat(val):null;
+                this.$emit('input', ii);
             },
             keypressMethod: function (evt){
                 evt = (evt) ? evt : window.event;
