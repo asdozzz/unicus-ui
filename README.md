@@ -1,2 +1,2 @@
 # unicus-ui
-unicus-ui
+npm i unicus-ui
