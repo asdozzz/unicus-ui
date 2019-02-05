@@ -1,27 +1,29 @@
 <template>
-    <v-card
+    <v-checkbox
+            color="primary"
+            :value="value"
+            @input="input"
             :class="classA"
             v-on="listeners"
             v-bind="attrs"
     >
-        <slot></slot>
-    </v-card>
+    </v-checkbox>
 </template>
 
 <script>
     export default {
-        name        : "unicus-card",
+        name        : "unicus-checkbox",
         props       : ['value'],
         inheritAttrs: false,
         computed    : {
             listeners()
             {
-                const {...listeners} = this.$listeners;
+                const {input, ...listeners} = this.$listeners;
                 return listeners;
             },
             classA()
             {
-                return this.$attrs.class ? this.$attrs.class+' unicus-card' : 'unicus-card';
+                return this.$attrs.class ? this.$attrs.class+' unicus-checkbox' : 'unicus-checkbox';
             },
             attrs()
             {
@@ -29,6 +31,12 @@
                 return attrs;
             },
         },
+        methods     : {
+            input(event)
+            {
+                this.$emit('input', event.target.value);
+            },
+        }
     }
 </script>
 

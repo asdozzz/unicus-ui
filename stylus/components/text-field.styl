@@ -3,9 +3,7 @@
 .unicus-field.v-text-field
   font-size: $font-sizes.body
 
-.unicus-field .v-text-field--outline .v-input__control > .v-input__slot,
-.unicus-field.v-text-field--outline .v-input__control > .v-input__slot
-  border: 1px solid $colors.input-border!important;
+
 
 .unicus-field.v-text-field > .v-input__control > .v-input__slot:before,
 .unicus-field-dashed .v-text-field > .v-input__control > .v-input__slot:before
@@ -23,29 +21,38 @@
 .unicus-field.has-error.v-text-field .v-input__control > .v-input__slot:before
   border-color:$colors.error!important;
 
-.unicus-field.has-error .v-text-field--outline .v-input__control > .v-input__slot
-  border: 1px solid $colors.error!important;
-
-.unicus-field.has-error.v-text-field--outline .v-input__control > .v-input__slot
-  border: 1px solid $colors.error!important;
-
 .unicus-field.has-error .v-input__control  .v-label
-  color:$colors.error ;
-
-.unicus-field.v-text-field--outline input,
-.unicus-field.v-text-field--outline textarea
-  margin-top: 24px!important;
-  font-size:$font-sizes.textfield;
-
-.unicus-field.v-text-field--outline input
-  max-height: 37px;
-
-.unicus-field.v-text-field--outline .v-label--active
-  transform: translateY(-6px) scale(0.80);
+  color:$colors.error;
 
 .unicus-field .v-input__slot .v-input__append-inner .v-icon
   color:$colors.main;
 
 .unicus-field.has-error .v-input__slot .v-input__append-inner .v-icon
   color:$colors.error;
+
+//OUTLINE
+.unicus-field .v-text-field--outline .v-input__control > .v-input__slot,
+.unicus-field.v-text-field--outline .v-input__control > .v-input__slot
+  border: 1px solid $colors.input-border!important;
+
+.unicus-field.v-text-field--outline input
+  padding: 8px 0 8px 0!important;
+
+.unicus-field.has-error .v-text-field--outline .v-input__control > .v-input__slot
+  border: 1px solid $colors.error!important;
+
+.unicus-field.has-error.v-text-field--outline .v-input__control > .v-input__slot
+  border: 1px solid $colors.error!important;
+
+.unicus-field.v-text-field--outline input,
+.unicus-field.v-text-field--outline textarea
+  font-size:$font-sizes.textfield;
+
+.unicus-field.v-text-field--outline input
+  max-height: 36px;
+
+.unicus-field.v-text-field--outline .v-label--active
+  transform: translateY(-6px) scale(0.80);
+  top:15px!important;
+
 

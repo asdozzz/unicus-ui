@@ -5,7 +5,6 @@
             v-on:keypress="keypressMethod()"
             v-on:input="changeNumeric"
             hide-details
-            label=" "
     ></unicus-text-field>
 </template>
 
