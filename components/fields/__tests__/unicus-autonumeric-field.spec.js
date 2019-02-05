@@ -2,7 +2,7 @@ import { shallowMount, mount } from '@vue/test-utils';
 import VeeValidate, { Validator } from 'vee-validate';
 import Vue from 'vue';
 import Vuetify from 'vuetify';
-import '@/unicus-ui/components/index';
+import 'unicus-ui';
 import UnicusAutonumericField from '../unicus-autonumeric-field';
 
 Vue.use(Vuetify);
