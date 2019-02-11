@@ -1,10 +1,8 @@
 <template>
     <v-text-field
-            :value="value"
-            @input="input"
-            :class="classA"
-            v-on="listeners"
+            v-on="inputListeners"
             v-bind="attrs"
+            v-bind:value="value"
     >
     </v-text-field>
 </template>
@@ -15,21 +13,23 @@
         props: ['value'],
         inheritAttrs: false,
         computed: {
-            listeners() {
-                const { input, ...listeners } = this.$listeners;
-                return listeners;
+            inputListeners: function () {
+                var vm = this;
+
+                return Object.assign({},
+                    this.$listeners,
+                    {
+                        input: function (value) {
+                            vm.$emit('input', value)
+                        }
+                    }
+                )
             },
             classA() {
-                return this.$attrs.class?this.$attrs.class:'unicus-field';
+                return this.$attrs.class?this.$attrs.class+'unicus-field':'unicus-field';
             },
             attrs() {
-                const { classA, ...attrs } = this.$attrs;
-                return attrs;
-            },
-        },
-        methods: {
-            input(value) {
-                this.$emit('input', value);
+                return Object.assign({},this.$attrs,{class:this.classA});
             },
         },
         mounted() {

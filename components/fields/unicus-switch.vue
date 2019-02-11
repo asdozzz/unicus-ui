@@ -1,15 +1,16 @@
 <template>
-    <v-textarea
+    <v-switch
+            color="primary"
             v-on="inputListeners"
             v-bind="attrs"
             v-bind:value="value"
     >
-    </v-textarea>
+    </v-switch>
 </template>
 
 <script>
     export default {
-        name        : "unicus-textarea",
+        name        : "unicus-switch",
         props       : ['value'],
         inheritAttrs: false,
         computed    : {
@@ -19,28 +20,19 @@
                 return Object.assign({},
                     this.$listeners,
                     {
-                        input: function (value) {
+                        change: function (value) {
                             vm.$emit('input', value)
                         }
                     }
                 )
             },
             classA() {
-                return this.$attrs.class?this.$attrs.class+'unicus-field':'unicus-field';
+                return this.$attrs.class?this.$attrs.class+' unicus-switch':'unicus-switch';
             },
             attrs() {
                 return Object.assign({},this.$attrs,{class:this.classA});
             },
-        },
-        methods     : {
-            input(value) {
-                this.$emit('input', value);
-            },
-        },
-        mounted()
-        {
-
-        },
+        }
     }
 </script>
 

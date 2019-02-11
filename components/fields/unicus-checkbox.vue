@@ -1,11 +1,9 @@
 <template>
     <v-checkbox
             color="primary"
-            :value="value"
-            @input="input"
-            :class="classA"
-            v-on="listeners"
+            v-on="inputListeners"
             v-bind="attrs"
+            v-bind:value="value"
     >
     </v-checkbox>
 </template>
@@ -16,25 +14,23 @@
         props       : ['value'],
         inheritAttrs: false,
         computed    : {
-            listeners()
-            {
-                const {input, ...listeners} = this.$listeners;
-                return listeners;
+            inputListeners: function () {
+                var vm = this;
+
+                return Object.assign({},
+                    this.$listeners,
+                    {
+                        change: function (value) {
+                            vm.$emit('input', value)
+                        }
+                    }
+                )
             },
-            classA()
-            {
-                return this.$attrs.class ? this.$attrs.class+' unicus-checkbox' : 'unicus-checkbox';
+            classA() {
+                return this.$attrs.class?this.$attrs.class+'unicus-checkbox':'unicus-checkbox';
             },
-            attrs()
-            {
-                const {classA, ...attrs} = this.$attrs;
-                return attrs;
-            },
-        },
-        methods     : {
-            input(event)
-            {
-                this.$emit('input', event.target.value);
+            attrs() {
+                return Object.assign({},this.$attrs,{class:this.classA});
             },
         }
     }

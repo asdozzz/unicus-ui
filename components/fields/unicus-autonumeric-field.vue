@@ -4,6 +4,7 @@
             v-model="numericmodel"
             v-on:keypress="keypressMethod()"
             v-on:input="changeNumeric"
+            browser-autocomplete="off"
             hide-details
     ></unicus-text-field>
 </template>
@@ -33,7 +34,7 @@
                 return Object.assign({},
                     this.$listeners,
                     {
-                        input: function (event) {
+                        input: function (value) {
                             vm.changeNumeric(event.target.value);
                         }
                     }

@@ -1,13 +1,25 @@
 <template>
     <div class="unicus-group-btns">
-        <span  v-for="(item,i) in items" v-bind:key="i">
-            <v-btn class="unicus-group-btns-item" flat @click="toggle(item)" :class="{'unicus-group-btns-item-active':isSelected(item)}">
-                {{getItemText(item)}}
-            </v-btn>
-        </span>
+        <div class="unicus-group-left-button" @click="prev" :class="{disabled:page <= 1}" v-if="totalPages > 1">
+            <i class="fal fa-chevron-left"></i>
+        </div>
+        <div class="unicus-group-content" :class="{'px-0':totalPages == 1}">
+            <v-slide-y-transition group tag="span">
+                <template v-for="(item,i) in resultItems">
+                    <v-btn :key="i" class="unicus-group-btns-item" flat @click="toggle(item)" :class="{'unicus-group-btns-item-active':isSelected(item)}">
+                        {{getItemText(item)}}
+                    </v-btn>
+                </template>
+            </v-slide-y-transition>
+
+        </div>
+        <div class="unicus-group-right-button" @click="next" :class="{disabled:page >= totalPages}" v-if="totalPages > 1">
+            <i class="fal fa-chevron-right"></i>
+        </div>
     </div>
 
 </template>
+
 
 <script>
     export default {
@@ -26,15 +38,60 @@
             },
             "item_text":{
                 type:String,
+            },
+            "page_size":{
+                type:Number|Number
+            },
+            "start_page":{
+                type:Number|Number
             }
         },
         data: function (){
             return {
-                model:undefined
+                model:undefined,
+                pageSize:undefined,
+                page:undefined
             };
+        },
+        computed:{
+            totalPages:function (){
+                return this.pageSize?Math.ceil(this.totalRecords/this.pageSize):0;
+            },
+            totalRecords:function (){
+                return this.items?this.items.length:0;
+            },
+            startIndex:function (){
+
+                if (!this.page)
+                {
+                    return 0;
+                }
+
+                return (this.page - 1)*this.pageSize;
+            },
+            endIndex:function (){
+                if (!this.page)
+                {
+                    return 0;
+                }
+
+                let end = this.page*this.pageSize;
+
+                if (end > this.totalRecords)
+                {
+                    end = this.totalRecords;
+                }
+
+                return end;
+            },
+            resultItems:function (){
+                return this.items.slice(this.startIndex, this.endIndex);
+            }
         },
         created: function (){
             this.model = this.value;
+            this.pageSize = this.page_size?parseInt(this.page_size):this.totalRecords;
+            this.page = this.start_page?parseInt(this.start_page):this.totalPages;
         },
         methods:{
             getItemText:function (item){
@@ -106,6 +163,16 @@
                 let val = this.getItemValue(item);
 
                 return String(val) == String(this.model);
+            },
+            prev: function (){
+                let page = this.page - 1;
+
+                this.page = page > 0?page:1;
+            },
+            next: function (){
+                let page = this.page + 1;
+
+                this.page = page > this.totalPages?this.totalPages:page;
             }
         }
     }

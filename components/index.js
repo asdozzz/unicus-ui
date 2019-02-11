@@ -4,6 +4,7 @@ import UnicusTextarea from './fields/unicus-textarea';
 import UnicusAutonumericField from './fields/unicus-autonumeric-field';
 import UnicusSelect from './fields/unicus-select';
 import UnicusCheckbox from './fields/unicus-checkbox';
+import UnicusSwitch from './fields/unicus-switch';
 import UnicusGroupBtns from './fields/unicus-group-btns';
 
 //fields
@@ -12,6 +13,7 @@ Vue.component('unicus-textarea',UnicusTextarea);
 Vue.component('unicus-autonumeric-field',UnicusAutonumericField);
 Vue.component('unicus-select',UnicusSelect);
 Vue.component('unicus-checkbox',UnicusCheckbox);
+Vue.component('unicus-switch',UnicusSwitch);
 Vue.component('unicus-group-btns',UnicusGroupBtns);
 
 //btns

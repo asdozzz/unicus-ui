@@ -1,7 +1,6 @@
 .unicus-btn-border-radius
   border-radius($radius.btn)
 
-
 .unicus-btn
   font-family: $fonts.museo-700;
   font-size: $font-sizes.btn;
@@ -14,13 +13,48 @@
 .unicus-group-btns-item
   font-size: $font-sizes.badge!important;
   margin: 0;
-  padding: 10px;
+  padding: 5px 9px;
   min-width: initial!important;
 
 .unicus-group-btns-item.unicus-group-btns-item-active
   background-color: $colors.main;
   color: $colors.white;
   border-radius(5px)
-  height 41px;
+
+.unicus-btn-title
+  font-size: $font-sizes.title;
+  border-radius($radius.btn);
+  text-transform: none;
+
+.unicus-group-btns
+  position: relative;
+
+.unicus-group-content
+  width 100%;
+  overflow hidden;
+  padding-left : 25px;
+  padding-right : 25px;
+
+.unicus-group-left-button
+  position absolute;
+  top 8px
+  left 5px
+  padding 0 5px
+  cursor pointer
+
+.unicus-group-right-button
+  position absolute;
+  top 8px
+  right 5px
+  padding 0 5px
+  cursor pointer
+
+.unicus-group-left-button:hover,
+.unicus-group-right-button:hover
+  background-color:#efefef
+
+.unicus-group-left-button.disabled,
+.unicus-group-right-button.disabled
+  opacity 0.5;
 
 
